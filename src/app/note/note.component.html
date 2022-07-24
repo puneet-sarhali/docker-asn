@@ -1,0 +1,11 @@
+
+<mat-card>
+    <mat-form-field>
+      <mat-label for="title">Title</mat-label>
+      <input #title [value]="inputData.titleVal" matInput type="text" id="title" >
+    </mat-form-field>
+
+    <textarea #note name="note" [value]="inputData.noteVal" placeholder="Enter note here..." cols="50" rows="20"></textarea>
+    <button mat-raised-button color="primary" *ngIf="!inputData.enableDelete" (click)="onSaveNote({notetxt: note, title: title}, false)">Save Note</button>
+    <button mat-raised-button color="primary" *ngIf="inputData.enableDelete" (click)="onSaveNote({notetxt: note, title: title}, true)">Update Note</button>
+</mat-card>

@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-card-title>SAVED NOTES</mat-card-title>
+    <mat-card-content>
+        <table>
+          <thead>
+            <td>Title</td>
+            <td>Last modified</td>
+          </thead>
+          <tr *ngFor="let note of notes">
+            <td> <button class="underline" mat-button color="primary" (click)="openDialog(note)">{{ note.title }}</button></td>
+            <td> {{ note.last_modified | date: "short" }}</td>
+            <td> <button mat-button color="accent" (click)="onEdit(note)" > Edit </button></td>
+            <td> <button mat-button color="warn" (click)="onDelete(note.id)"> Delete </button></td>
+          </tr>
+        </table>
+    </mat-card-content>
+</mat-card>

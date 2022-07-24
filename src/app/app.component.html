@@ -1,0 +1,2 @@
+<app-note (noteCreated)="onNoteEmit($event)" [inputData]="noteToEdit" ></app-note>
+<app-notes [notes]="allNotes" (deleteTask)="deleteTask($event)" (editTask)="editTask($event)"></app-notes>
